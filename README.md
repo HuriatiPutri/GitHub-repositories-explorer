@@ -2,6 +2,12 @@
 
 A modern, responsive React application that allows users to search for GitHub users and explore their repositories with advanced features like keyboard navigation, accessibility support, and comprehensive error handling.
 
+## 🌐 Live Demo
+
+**🚀 [View Live Application](https://HuriatiPutri.github.io/GitHub-repositories-explorer/)**
+
+> The application is automatically deployed to GitHub Pages via GitHub Actions on every push to the main branch.
+
 ## ✨ Features
 
 ### 🔎 **User Search**
@@ -119,11 +125,34 @@ The project includes comprehensive test coverage:
 - **Coverage**: Comprehensive coverage of all components and API functions
 
 Run tests:
-
 ```bash
 npm test                    # Run all tests
 npm run test:ui            # Interactive test UI
 npm run test:coverage      # Coverage reports
+```
+
+## 🚀 Deployment
+
+### GitHub Pages (Automatic)
+The project is automatically deployed to GitHub Pages using GitHub Actions:
+
+1. **Push to main branch** triggers automatic deployment
+2. **Tests run first** - deployment only proceeds if tests pass
+3. **Build artifacts** are generated and deployed
+4. **Live site** available at: https://HuriatiPutri.github.io/GitHub-repositories-explorer/
+
+### Manual Deployment
+You can also deploy manually using:
+
+```bash
+npm run build              # Build the project
+npm run deploy             # Deploy to GitHub Pages (requires gh-pages setup)
+```
+
+### Local Development with Production Build
+```bash
+npm run build              # Build for production
+npm run preview            # Preview production build locally
 ```
 
 ## 🎨 Component API
@@ -148,21 +177,24 @@ interface RepositoryCardProps {
 ## 🔧 Configuration
 
 ### Environment Variables
-
 The application uses the GitHub public API which doesn't require authentication for basic usage. For higher rate limits, you can add a GitHub token:
 
 ```env
 VITE_GITHUB_TOKEN=your_github_token_here  # Optional
 ```
 
-### TypeScript Configuration
+### Deployment Configuration
+- **GitHub Pages**: Automatically deployed via GitHub Actions
+- **Base Path**: Configured for `/GitHub-repositories-explorer/`
+- **Build Target**: Static files in `dist/` directory
+- **Auto-Deploy**: Triggers on push to `main` branch
 
+### TypeScript Configuration
 - **Strict Mode**: Enabled for better type safety
 - **Path Mapping**: Configured for clean imports
 - **React Compiler**: Enabled for optimized React performance
 
 ### ESLint Configuration
-
 - **React Hooks**: Enforced rules for proper hook usage
 - **TypeScript**: Type-aware linting rules
 - **Accessibility**: A11y best practices enforced
