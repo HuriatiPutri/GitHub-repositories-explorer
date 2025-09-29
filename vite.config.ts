@@ -10,4 +10,5 @@ export default defineConfig({
       },
     }),
   ],
+  base: '/GitHub-repositories-explorer/',
 })
